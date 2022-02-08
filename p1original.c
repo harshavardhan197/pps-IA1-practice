@@ -1,25 +1,22 @@
 #include<stdio.h>
-int input(int *a,int *b)
+void input (float *base, float *height)
 {
-  printf("enter the value\n");
-  scanf("%d%d",a,b);
+  printf ("enter base and height\n");
+  scanf ("%f%f", base, height);
 }
-
-int add(int a,int b,int *sum)
+void find_area (float base, float height, float *area)
 {
-  *sum=a+b;
+ *area = (base * height)/2;
 }
-
-int output(int a,int b,int c)
+void output (float base, float height, float area)
 {
-  printf("sum of a b is %d+%d=%d",a,b,c);
+printf("Area of Triangle with base %f and height %f is %f\n",base,height,area);
 }
-
 int main()
 {
-  int x,y,z;
-  input(&x,&y);
-  add(x,y,&z);
-  output(x,y,z);
-  return 0;
+ float base,height,area;
+ input(&base, &height);
+ find_area(base, height, &area);
+ output(base, height, area);
+ return 0;
 }
